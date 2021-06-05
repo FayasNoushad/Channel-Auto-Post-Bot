@@ -1,7 +1,7 @@
 import os
 from pyrogram import Client
 
-FROM_CHANNELS = int(os.environ["FROM_CHANNELS"])
+FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
 TO_CHAT = int(os.environ["TO_CHAT"])
 
 FayasNoushad = Client(
