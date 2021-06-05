@@ -11,6 +11,19 @@ FayasNoushad = Client(
     api_hash = os.environ["API_HASH"]
 )
 
+START_TEXT = """
+Hello {}, I am a channel auto post telegram bot.
+
+Made by @FayasNoushad
+"""
+
+@FayasNoushad.on_message(filters.private & filters.command(["start"]))
+async def start(bot, update):
+    await update.reply_text(
+        text=START_TEXT.format(update.from_user.mention),
+        disable_web_page_preview=True
+    )
+
 @FayasNoushad.on_message(filters.channel & (filters.media | filters.text))
 async def autopost(bot, update):
     if not update.chat.id in FROM_CHANNELS:
