@@ -1,0 +1,32 @@
+{
+    "name": "Channel-Auto-Post-Bot",
+    "description": "A channel auto post telegram bot",
+    "keywords": [
+        "Telegram",
+        "Channel",
+        "Auto Post",
+        "Pyrogram"
+    ],
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your Bot token from @Botfather"
+        },
+        "API_ID": {
+            "description": "Your API_ID from https://my.telegram.org/apps"
+        },
+        "API_HASH": {
+            "description": "Your API_HASH from https://my.telegram.org/apps"
+        },
+        "FROM_CHANNELS": {
+            "description": "from channel ids for auto post"
+        },
+        "TO_CHAT": {
+            "description": "to channel or group or chat id for auto post"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
