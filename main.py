@@ -29,6 +29,7 @@ async def autopost(bot, update):
     if not update.chat.id in FROM_CHANNELS:
         return
     try:
-        await update.copy(chat_id=TO_CHAT)
+        if TO_CHAT:
+            await update.copy(chat_id=TO_CHAT)
     except Exception as error:
         print(error)
