@@ -2,6 +2,8 @@
 
 A channel auto post telegram bot.
 
+---
+
 ```
 Please fork this repository don't import code
 Made with Python3
