@@ -18,10 +18,12 @@
             "description": "Your API_HASH from https://my.telegram.org/apps"
         },
         "FROM_CHANNELS": {
-            "description": "from channel ids for auto post"
+            "description": "from channel ids for auto post",
+            "required": false
         },
         "TO_CHAT": {
-            "description": "to channel or group or chat id for auto post"
+            "description": "to channel or group or chat id for auto post",
+            "required": false
         }
     },
     "buildpacks": [
