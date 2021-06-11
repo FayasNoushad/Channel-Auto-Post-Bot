@@ -32,10 +32,9 @@ async def start(bot, update):
 
 @FayasNoushad.on_message(filters.channel & (filters.media | filters.text))
 async def autopost(bot, update):
-    if not update.chat.id in FROM_CHANNELS:
+    if (not update.chat.id in FROM_CHANNELS) or (not TO_CHAT) or ((update.chat.id in FROM_CHANNELS) and (not TO_CHAT)):
         return
     try:
-        if TO_CHAT:
-            await update.copy(chat_id=TO_CHAT)
+        await update.copy(chat_id=TO_CHAT)
     except Exception as error:
         print(error)
