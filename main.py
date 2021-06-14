@@ -5,7 +5,7 @@
 # License -> https://github.com/FayasNoushad/Channel-Auto-Post-Bot/blob/main/LICENSE
 
 import os
-from pyrogram import Client
+from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
