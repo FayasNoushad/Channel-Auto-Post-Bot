@@ -51,6 +51,7 @@ python3 main.py
 - `FILTER_TEXT` (bool and optional) For text filter
 - `FILTER_AUDIO` (bool and optional) For audio filter
 - `FILTER_FILE` (bool and optional) For file filter
+
 ---
 
 ## Credits
