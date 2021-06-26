@@ -12,7 +12,7 @@ FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
 TO_CHAT = int(os.environ["TO_CHAT"])
 
 # filters for auto post
-FILTER_AUDIO = bool(os.environ.get("", True))
+FILTER_AUDIO = bool(os.environ.get("FILTER_AUDIO", True))
 FILTER_FILE = bool(os.environ.get("", True))
 FILTER_PHOTO = bool(os.environ.get("", True))
 FILTER_STICKER = bool(os.environ.get("", True))
@@ -57,6 +57,7 @@ async def start(bot, update):
 
 @FayasNoushad.on_message(
     filters.channel & (
+        filters.audio if FILTER_AUDIO else None |
         filters.text
     )
 )
