@@ -60,6 +60,7 @@ python3 main.py
 - `FILTER_CONTACT` (bool and optional) For contact filter
 - `FILTER_VENUE` (bool and optional) For venue filter
 - `FILTER_LOCATION` (bool and optional) For location filter
+- `FILTER_POLL` (bool and optional) For poll filter
 
 ---
 
