@@ -23,7 +23,7 @@ FILTER_VIDEO_NOTE = bool(os.environ.get("FILTER_VIDEO_NOTE", True))
 FILTER_CONTACT = bool(os.environ.get("FILTER_CONTACT", True))
 FILTER_LOCATION = bool(os.environ.get("FILTER_LOCATION", True))
 FILTER_VENUE = bool(os.environ.get("FILTER_VENUE", True))
-FILTER_POLL = bool(os.environ.get("", True))
+FILTER_POLL = bool(os.environ.get("FILTER_POLL", True))
 FILTER_TEXT = bool(os.environ.get("", True))
 
 FayasNoushad = Client(
@@ -68,6 +68,7 @@ async def start(bot, update):
         filters.contact if FILTER_CONTACT else None |
         filters.location if FILTER_LOCATION else None |
         filters.venue if FILTER_VENUE else None |
+        filters.poll if FILTER_POLL else None |
         filters.text
     )
 )
