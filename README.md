@@ -43,6 +43,9 @@ python3 main.py
 
 ## Variables
 
+<details>
+  <summary><b>See Variables</b></summary>
+
 - `API_HASH` Your API Hash from my.telegram.org
 - `API_ID` Your API ID from my.telegram.org
 - `BOT_TOKEN` Your bot token from @BotFather
@@ -64,6 +67,8 @@ python3 main.py
 - `FILTER_LOCATION` (bool and optional) For location filter
 - `FILTER_POLL` (bool and optional) For poll filter
 - `FILTER_GAME` (bool and optional) For game filter
+
+</details>
 
 ---
 
