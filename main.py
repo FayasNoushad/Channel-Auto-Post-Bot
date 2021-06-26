@@ -14,7 +14,7 @@ TO_CHAT = int(os.environ["TO_CHAT"])
 # filters for auto post
 FILTER_TEXT = bool(os.environ.get("FILTER_TEXT", True))
 FILTER_AUDIO = bool(os.environ.get("FILTER_AUDIO", True))
-FILTER_FILE = bool(os.environ.get("FILTER_FILE", True))
+FILTER_DOCUMENT = bool(os.environ.get("FILTER_DOCUMENT", True))
 FILTER_PHOTO = bool(os.environ.get("FILTER_PHOTO", True))
 FILTER_STICKER = bool(os.environ.get("FILTER_STICKER", True))
 FILTER_VIDEO = bool(os.environ.get("FILTER_VIDEO", True))
@@ -60,7 +60,7 @@ async def start(bot, update):
     filters.channel & (
         filters.text if FILTER_TEXT else None |
         filters.audio if FILTER_AUDIO else None |
-        filters.document if FILTER_FILE else None |
+        filters.document if FILTER_DOCUMENT else None |
         filters.photo if FILTER_PHOTO else None |
         filters.sticker if FILTER_STICKER else None |
         filters.video if FILTER_VIDEO else None |
