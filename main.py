@@ -24,6 +24,7 @@ FILTER_CONTACT = True
 FILTER_LOCATION = True
 FILTER_VENUE = True
 FILTER_POLL = True
+FILTER_TEXT = True
 
 FayasNoushad = Client(
     "Channel Auto Post Bot",
