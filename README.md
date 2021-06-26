@@ -46,8 +46,10 @@ python3 main.py
 - `API_HASH` Your API Hash from my.telegram.org
 - `API_ID` Your API ID from my.telegram.org
 - `BOT_TOKEN` Your bot token from @BotFather
+
 - `FROM_CHANNELS` From channel ids for auto post
 - `TO_CHAT` To channel or group or chat id for auto post
+
 - `FILTER_TEXT` (bool and optional) For text filter
 - `FILTER_AUDIO` (bool and optional) For audio filter
 - `FILTER_DOCUMENT` (bool and optional) For document filter
