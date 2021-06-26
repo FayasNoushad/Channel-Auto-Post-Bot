@@ -50,7 +50,7 @@ python3 main.py
 - `TO_CHAT` To channel or group or chat id for auto post
 - `FILTER_TEXT` (bool and optional) For text filter
 - `FILTER_AUDIO` (bool and optional) For audio filter
-- `FILTER_FILE` (bool and optional) For file filter
+- `FILTER_DOCUMENT` (bool and optional) For document filter
 - `FILTER_PHOTO` (bool and optional) For photo filter
 - `FILTER_STICKER` (bool and optional) For sticker filter
 - `FILTER_VIDEO` (bool and optional) For video filter
