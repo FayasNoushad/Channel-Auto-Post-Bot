@@ -40,7 +40,10 @@ async def start(bot, update):
         reply_markup=START_BUTTONS
     )
 
-@FayasNoushad.on_message(filters.channel & (filters.media | filters.text))
+@FayasNoushad.on_message(
+    filters.channel &
+    (filters.media | filters.text)
+)
 async def autopost(bot, update):
     if (not update.chat.id in FROM_CHANNELS) or (not TO_CHAT) or ((update.chat.id in FROM_CHANNELS) and (not TO_CHAT)):
         return
