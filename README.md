@@ -57,6 +57,7 @@ python3 main.py
 - `FILTER_ANIMATION` (bool and optional) For animation filter
 - `FILTER_VOICE` (bool and optional) For voice filter
 - `FILTER_VIDEO_NOTE` (bool and optional) For video note filter
+- `FILTER_CONTACT` (bool and optional) For contact filter
 
 ---
 
