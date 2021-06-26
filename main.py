@@ -24,7 +24,7 @@ FILTER_CONTACT = bool(os.environ.get("FILTER_CONTACT", True))
 FILTER_LOCATION = bool(os.environ.get("FILTER_LOCATION", True))
 FILTER_VENUE = bool(os.environ.get("FILTER_VENUE", True))
 FILTER_POLL = bool(os.environ.get("FILTER_POLL", True))
-FILTER_TEXT = bool(os.environ.get("", True))
+FILTER_TEXT = bool(os.environ.get("FILTER_TEXT", True))
 
 FayasNoushad = Client(
     "Channel Auto Post Bot",
@@ -69,7 +69,7 @@ async def start(bot, update):
         filters.location if FILTER_LOCATION else None |
         filters.venue if FILTER_VENUE else None |
         filters.poll if FILTER_POLL else None |
-        filters.text
+        filters.text if FILTER_TEXT else None
     )
 )
 async def autopost(bot, update):
