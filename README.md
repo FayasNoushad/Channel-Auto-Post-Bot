@@ -48,6 +48,7 @@ python3 main.py
 - `BOT_TOKEN` Your bot token from @BotFather
 - `FROM_CHANNELS` From channel ids for auto post
 - `TO_CHAT` To channel or group or chat id for auto post
+- `FILTER_TEXT` (bool and optional) For text filter
 
 ---
 
