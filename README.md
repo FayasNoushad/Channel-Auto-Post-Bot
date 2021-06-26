@@ -61,6 +61,7 @@ python3 main.py
 - `FILTER_VENUE` (bool and optional) For venue filter
 - `FILTER_LOCATION` (bool and optional) For location filter
 - `FILTER_POLL` (bool and optional) For poll filter
+- `FILTER_GAME` (bool and optional) For game filter
 
 ---
 
