@@ -11,6 +11,20 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
 TO_CHAT = int(os.environ["TO_CHAT"])
 
+# filters for auto post
+FILTER_AUDIO = True 
+FILTER_FILE = True 
+FILTER_PHOTO = True
+FILTER_STICKER = True
+FILTER_VIDEO = True
+FILTER_ANIMATION = True
+FILTER_VOICE = True
+FILTER_VIDEO_NOTE = True
+FILTER_CONTACT = True
+FILTER_LOCATION = True
+FILTER_VENUE = True
+FILTER_POLL = True
+
 FayasNoushad = Client(
     "Channel Auto Post Bot",
     bot_token = os.environ["BOT_TOKEN"],
