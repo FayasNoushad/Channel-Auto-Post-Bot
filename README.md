@@ -54,6 +54,7 @@ python3 main.py
 - `FILTER_PHOTO` (bool and optional) For photo filter
 - `FILTER_STICKER` (bool and optional) For sticker filter
 - `FILTER_VIDEO` (bool and optional) For video filter
+- `FILTER_ANIMATION` (bool and optional) For animation filter
 
 ---
 
