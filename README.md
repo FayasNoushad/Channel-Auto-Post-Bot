@@ -59,7 +59,7 @@ python3 main.py
 - `FILTER_VIDEO_NOTE` (bool and optional) For video note filter
 - `FILTER_CONTACT` (bool and optional) For contact filter
 - `FILTER_VENUE` (bool and optional) For venue filter
-
+- `FILTER_LOCATION` (bool and optional) For location filter
 ---
 
 ## Credits
