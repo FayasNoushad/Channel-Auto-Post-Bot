@@ -12,6 +12,7 @@ FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
 TO_CHAT = int(os.environ["TO_CHAT"])
 
 # filters for auto post
+FILTER_TEXT = bool(os.environ.get("FILTER_TEXT", True))
 FILTER_AUDIO = bool(os.environ.get("FILTER_AUDIO", True))
 FILTER_FILE = bool(os.environ.get("FILTER_FILE", True))
 FILTER_PHOTO = bool(os.environ.get("FILTER_PHOTO", True))
@@ -24,7 +25,6 @@ FILTER_CONTACT = bool(os.environ.get("FILTER_CONTACT", True))
 FILTER_LOCATION = bool(os.environ.get("FILTER_LOCATION", True))
 FILTER_VENUE = bool(os.environ.get("FILTER_VENUE", True))
 FILTER_POLL = bool(os.environ.get("FILTER_POLL", True))
-FILTER_TEXT = bool(os.environ.get("FILTER_TEXT", True))
 
 FayasNoushad = Client(
     "Channel Auto Post Bot",
@@ -57,6 +57,7 @@ async def start(bot, update):
 
 @FayasNoushad.on_message(
     filters.channel & (
+        filters.text if FILTER_TEXT else None |
         filters.audio if FILTER_AUDIO else None |
         filters.document if FILTER_FILE else None |
         filters.photo if FILTER_PHOTO else None |
@@ -68,8 +69,7 @@ async def start(bot, update):
         filters.contact if FILTER_CONTACT else None |
         filters.location if FILTER_LOCATION else None |
         filters.venue if FILTER_VENUE else None |
-        filters.poll if FILTER_POLL else None |
-        filters.text if FILTER_TEXT else None
+        filters.poll if FILTER_POLL else None
     )
 )
 async def autopost(bot, update):
