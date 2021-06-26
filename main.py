@@ -15,7 +15,7 @@ TO_CHAT = int(os.environ["TO_CHAT"])
 FILTER_AUDIO = bool(os.environ.get("FILTER_AUDIO", True))
 FILTER_FILE = bool(os.environ.get("FILTER_FILE", True))
 FILTER_PHOTO = bool(os.environ.get("FILTER_PHOTO", True))
-FILTER_STICKER = bool(os.environ.get("", True))
+FILTER_STICKER = bool(os.environ.get("FILTER_STICKER", True))
 FILTER_VIDEO = bool(os.environ.get("", True))
 FILTER_ANIMATION = bool(os.environ.get("", True))
 FILTER_VOICE = bool(os.environ.get("", True))
@@ -60,6 +60,7 @@ async def start(bot, update):
         filters.audio if FILTER_AUDIO else None |
         filters.document if FILTER_FILE else None |
         filters.photo if FILTER_PHOTO else None |
+        filters.sticker if FILTER_STICKER else None |
         filters.text
     )
 )
