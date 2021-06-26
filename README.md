@@ -49,7 +49,7 @@ python3 main.py
 - `FROM_CHANNELS` From channel ids for auto post
 - `TO_CHAT` To channel or group or chat id for auto post
 - `FILTER_TEXT` (bool and optional) For text filter
-
+- `FILTER_AUDIO` (bool and optional) For audio filter
 ---
 
 ## Credits
