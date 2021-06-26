@@ -18,7 +18,7 @@ FILTER_PHOTO = bool(os.environ.get("FILTER_PHOTO", True))
 FILTER_STICKER = bool(os.environ.get("FILTER_STICKER", True))
 FILTER_VIDEO = bool(os.environ.get("FILTER_VIDEO", True))
 FILTER_ANIMATION = bool(os.environ.get("FILTER_ANIMATION", True))
-FILTER_VOICE = bool(os.environ.get("", True))
+FILTER_VOICE = bool(os.environ.get("FILTER_VOICE", True))
 FILTER_VIDEO_NOTE = bool(os.environ.get("", True))
 FILTER_CONTACT = bool(os.environ.get("", True))
 FILTER_LOCATION = bool(os.environ.get("", True))
@@ -63,6 +63,7 @@ async def start(bot, update):
         filters.sticker if FILTER_STICKER else None |
         filters.video if FILTER_VIDEO else None |
         filters.animation if FILTER_ANIMATION else None |
+        filters.voice if FILTER_VOICE else None |
         filters.text
     )
 )
