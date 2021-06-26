@@ -53,6 +53,7 @@ python3 main.py
 - `FILTER_FILE` (bool and optional) For file filter
 - `FILTER_PHOTO` (bool and optional) For photo filter
 - `FILTER_STICKER` (bool and optional) For sticker filter
+- `FILTER_VIDEO` (bool and optional) For video filter
 
 ---
 
