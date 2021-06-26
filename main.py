@@ -57,7 +57,6 @@ async def start(bot, update):
 
 @FayasNoushad.on_message(
     filters.channel & (
-        filters.media |
         filters.text
     )
 )
