@@ -17,6 +17,7 @@ License -> https://github.com/FayasNoushad/Channel-Auto-Post-Bot/blob/main/LICEN
 
 <details>
   <summary><b>Deploy on Heroku</b></summary>
+<br/>
 
 <p align="left">
   <a href="https://heroku.com/deploy?template=https://github.com/FayasNoushad/Channel-Auto-Post-Bot/tree/main">
@@ -28,6 +29,7 @@ License -> https://github.com/FayasNoushad/Channel-Auto-Post-Bot/blob/main/LICEN
 
 <details>
   <summary><b>Deploy in your vps</b></summary>
+<br/>
 
 ```sh
 git clone https://github.com/FayasNoushad/Channel-Auto-Post-Bot/tree/main
