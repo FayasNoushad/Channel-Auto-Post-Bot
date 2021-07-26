@@ -35,16 +35,16 @@ FayasNoushad = Client(
 )
 
 START_TEXT = """
-Hello {}, I am a channel auto post telegram bot.
+Hello {}, I am a channel auto post telegram bot by ❤ in 🇮🇳.
 
-Made by @FayasNoushad
+Made by @doreamonfans1
 """
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        InlineKeyboardButton('Updates Channel', url='https://telegram.me/disneygrou'),
+        InlineKeyboardButton('Developer', url='https://telegram.me/doreamonfans1')
         ],[
-        InlineKeyboardButton('Source Code', url='https://github.com/FayasNoushad/Channel-Auto-Post-Bot')
+        InlineKeyboardButton('Support', url='https://telegram.me/disneyteamchat')
         ]]
     )
 
