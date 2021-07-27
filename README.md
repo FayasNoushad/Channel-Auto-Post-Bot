@@ -8,7 +8,7 @@ A channel auto post telegram bot.
 Made with Python3
 (C) @doreamonfans1 
 Copyright permission under MIT License
-License -> https://github.com/disneyteam77/Channel-Auto-Post-Bot/blob/main/LICENSE
+License -> https://github.com/disneyteam77/Channel-Auto-Post-Bot/blob/patch-1/LICENSE
 ```
 
 ---
