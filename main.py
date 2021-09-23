@@ -27,7 +27,7 @@ FILTER_VENUE = bool(os.environ.get("FILTER_VENUE", True))
 FILTER_POLL = bool(os.environ.get("FILTER_POLL", True))
 FILTER_GAME = bool(os.environ.get("FILTER_GAME", True))
 
-FayasNoushad = Client(
+Bot = Client(
     "Channel Auto Post Bot",
     bot_token = os.environ["BOT_TOKEN"],
     api_id = int(os.environ["API_ID"]),
@@ -48,7 +48,8 @@ START_BUTTONS = InlineKeyboardMarkup(
         ]]
     )
 
-@FayasNoushad.on_message(filters.private & filters.command(["start"]))
+
+@Bot.on_message(filters.private & filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
         text=START_TEXT.format(update.from_user.mention),
@@ -56,7 +57,8 @@ async def start(bot, update):
         reply_markup=START_BUTTONS
     )
 
-@FayasNoushad.on_message(
+
+@Bot.on_message(
     filters.channel & (
         filters.text if FILTER_TEXT else None |
         filters.audio if FILTER_AUDIO else None |
@@ -81,3 +83,6 @@ async def autopost(bot, update):
         await update.copy(chat_id=TO_CHAT)
     except Exception as error:
         print(error)
+
+
+Bot.run()
