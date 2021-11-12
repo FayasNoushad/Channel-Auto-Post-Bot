@@ -1,9 +1,3 @@
-# Channel-Auto-Post-Bot
-
-A channel auto post telegram bot.
-
----
-
 ```
 Made with Python3
 (C) @FayasNoushad
@@ -13,41 +7,19 @@ License -> https://github.com/FayasNoushad/Channel-Auto-Post-Bot/blob/main/LICEN
 
 ---
 
-## Deploy 
-
-<details>
-  <summary><b>Deploy on Heroku</b></summary>
-<br/>
-
-<p align="left">
-  <a href="https://heroku.com/deploy?template=https://github.com/FayasNoushad/Channel-Auto-Post-Bot/tree/main">
-     <img height="30px" src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku">
-  </a>
-</p>
-
-</details>
-
-<details>
-  <summary><b>Deploy in your vps</b></summary>
-<br/>
+## Deploy
 
 ```sh
-git clone https://github.com/FayasNoushad/Channel-Auto-Post-Bot/tree/main
+git clone https://github.com/FayasNoushad/Channel-Auto-Post-Bot.git
 cd Channel-Auto-Post-Bot
 pip3 install -r requirements.txt
 # <Create Variables appropriately>
 python3 main.py
 ```
 
-</details>
-
 ---
 
 ## Variables
-
-<details>
-  <summary><b>See Variables</b></summary>
-<br/>
 
 - `API_HASH` Your API Hash from my.telegram.org
 - `API_ID` Your API ID from my.telegram.org
@@ -69,11 +41,11 @@ python3 main.py
 - `FILTER_POLL` (bool and optional) For poll filter
 - `FILTER_GAME` (bool and optional) For game filter
 
-</details>
-
 ---
 
 ## Credits
 
 - [Fayas Noushad](https://github.com/FayasNoushad)
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
+
+---
