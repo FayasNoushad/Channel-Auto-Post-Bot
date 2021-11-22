@@ -26,6 +26,7 @@ python3 main.py
 - `BOT_TOKEN` Your bot token from @BotFather
 - `FROM_CHANNELS` From channel ids for auto post
 - `TO_CHAT` To channel or group or chat id for auto post
+- `AS_COPY` (bool and optional) For forward as copy
 - `FILTER_TEXT` (bool and optional) For text filter
 - `FILTER_AUDIO` (bool and optional) For audio filter
 - `FILTER_DOCUMENT` (bool and optional) For document filter

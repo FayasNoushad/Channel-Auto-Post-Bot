@@ -2,8 +2,10 @@ import os
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+
 FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
 TO_CHAT = int(os.environ["TO_CHAT"])
+AS_COPY = bool(os.environ.get("AS_COPY", True))
 
 # filters for auto post
 FILTER_TEXT = bool(os.environ.get("FILTER_TEXT", True))
@@ -77,13 +79,16 @@ async def autopost(bot, update):
     if (not update.chat.id in FROM_CHANNELS) or (not TO_CHAT) or ((update.chat.id in FROM_CHANNELS) and (not TO_CHAT)):
         return
     try:
-        if REPLY_MARKUP:
-            await update.copy(
-                chat_id=TO_CHAT,
-                reply_markup=update.reply_markup
-            )
+        if AS_COPY:
+            if REPLY_MARKUP:
+                await update.copy(
+                    chat_id=TO_CHAT,
+                    reply_markup=update.reply_markup
+                )
+            else:
+                await update.copy(chat_id=TO_CHAT)
         else:
-            await update.copy(chat_id=TO_CHAT)
+            await update.forward(chat_id=TO_CHAT)
     except Exception as error:
         print(error)
 
