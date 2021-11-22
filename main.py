@@ -80,7 +80,10 @@ async def autopost(bot, update):
     if (not update.chat.id in FROM_CHANNELS) or (not TO_CHAT) or ((update.chat.id in FROM_CHANNELS) and (not TO_CHAT)):
         return
     try:
-        await update.copy(chat_id=TO_CHAT)
+        await update.copy(
+            chat_id=TO_CHAT,
+            reply_markup=update.reply_markup
+        )
     except Exception as error:
         print(error)
 
