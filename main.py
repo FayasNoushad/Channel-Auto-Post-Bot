@@ -27,6 +27,9 @@ FILTER_VENUE = bool(os.environ.get("FILTER_VENUE", True))
 FILTER_POLL = bool(os.environ.get("FILTER_POLL", True))
 FILTER_GAME = bool(os.environ.get("FILTER_GAME", True))
 
+# for copy buttons
+REPLY_MARKUP = bool(os.environ.get("REPLY_MARKUP", True))
+
 Bot = Client(
     "Channel Auto Post Bot",
     bot_token = os.environ["BOT_TOKEN"],
@@ -80,7 +83,13 @@ async def autopost(bot, update):
     if (not update.chat.id in FROM_CHANNELS) or (not TO_CHAT) or ((update.chat.id in FROM_CHANNELS) and (not TO_CHAT)):
         return
     try:
-        await update.copy(chat_id=TO_CHAT)
+        if REPLY_MARKUP:
+            await update.copy(
+                chat_id=TO_CHAT,
+                reply_markup=update.reply_markup
+            )
+        else:
+            await update.copy(chat_id=TO_CHAT)
     except Exception as error:
         print(error)
 

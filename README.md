@@ -40,6 +40,7 @@ python3 main.py
 - `FILTER_LOCATION` (bool and optional) For location filter
 - `FILTER_POLL` (bool and optional) For poll filter
 - `FILTER_GAME` (bool and optional) For game filter
+- `REPLY_MARKUP` (bool and optional) For copy reply markup
 
 ---
 
