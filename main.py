@@ -24,7 +24,7 @@ FILTER_POLL = bool(os.environ.get("FILTER_POLL", True))
 FILTER_GAME = bool(os.environ.get("FILTER_GAME", True))
 
 # for copy buttons
-REPLY_MARKUP = bool(os.environ.get("REPLY_MARKUP", True))
+REPLY_MARKUP = bool(os.environ.get("REPLY_MARKUP", False))
 
 Bot = Client(
     "Channel Auto Post Bot",
@@ -33,19 +33,20 @@ Bot = Client(
     api_hash = os.environ["API_HASH"]
 )
 
-START_TEXT = """
-Hello {}, I am a channel auto post telegram bot.
+START_TEXT = """Hello {}, I am a channel auto post telegram bot.
 
-Made by @FayasNoushad
-"""
+Made by @FayasNoushad"""
 START_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
-        ],[
-        InlineKeyboardButton('Source Code', url='https://github.com/FayasNoushad/Channel-Auto-Post-Bot')
-        ]]
-    )
+    [
+        [
+            InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
+            InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        ],
+        [
+            InlineKeyboardButton('Source Code', url='https://github.com/FayasNoushad/Channel-Auto-Post-Bot')
+        ]
+    ]
+)
 
 
 @Bot.on_message(filters.private & filters.command(["start"]))
