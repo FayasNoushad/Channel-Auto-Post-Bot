@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
-TO_CHAT = set(int(x) for x in os.environ.get("TO_CHATS", "").split())
+TO_CHATS = set(int(x) for x in os.environ.get("TO_CHATS", "").split())
 AS_COPY = bool(os.environ.get("AS_COPY", True))
 
 # filters for auto post
