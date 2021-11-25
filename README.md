@@ -21,9 +21,14 @@ python3 main.py
 
 ## Variables
 
+### Required
+
 - `API_HASH` Your API Hash from my.telegram.org
 - `API_ID` Your API ID from my.telegram.org
 - `BOT_TOKEN` Your bot token from @BotFather
+
+## Non Required
+
 - `FROM_CHANNELS` From channel ids for auto post
 - `TO_CHAT` To channel or group or chat id for auto post
 - `AS_COPY` (bool and optional) For forward as copy
