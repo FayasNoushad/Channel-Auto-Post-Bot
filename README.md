@@ -30,7 +30,7 @@ python3 main.py
 ## Non Required
 
 - `FROM_CHANNELS` From channel ids for auto post
-- `TO_CHATS` To channel or group or chat id for auto post
+- `TO_CHATS` To channel or group or chat ids for auto post
 - `AS_COPY` (bool and optional) For forward as copy
 - `FILTER_TEXT` (bool and optional) For text filter
 - `FILTER_AUDIO` (bool and optional) For audio filter
