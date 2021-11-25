@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
-TO_CHAT = int(os.environ["TO_CHAT"])
+TO_CHATS = set(int(x) for x in os.environ.get("TO_CHATS", "").split())
 AS_COPY = bool(os.environ.get("AS_COPY", True))
 
 # filters for auto post
@@ -24,7 +24,7 @@ FILTER_POLL = bool(os.environ.get("FILTER_POLL", True))
 FILTER_GAME = bool(os.environ.get("FILTER_GAME", True))
 
 # for copy buttons
-REPLY_MARKUP = bool(os.environ.get("REPLY_MARKUP", True))
+REPLY_MARKUP = bool(os.environ.get("REPLY_MARKUP", False))
 
 Bot = Client(
     "Channel Auto Post Bot",
@@ -33,19 +33,20 @@ Bot = Client(
     api_hash = os.environ["API_HASH"]
 )
 
-START_TEXT = """
-Hello {}, I am a channel auto post telegram bot.
+START_TEXT = """Hello {}, I am a channel auto post telegram bot.
 
-Made by @FayasNoushad
-"""
+Made by @FayasNoushad"""
 START_BUTTONS = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-        InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
-        ],[
-        InlineKeyboardButton('Source Code', url='https://github.com/FayasNoushad/Channel-Auto-Post-Bot')
-        ]]
-    )
+    [
+        [
+            InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
+            InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+        ],
+        [
+            InlineKeyboardButton('Source Code', url='https://github.com/FayasNoushad/Channel-Auto-Post-Bot')
+        ]
+    ]
+)
 
 
 @Bot.on_message(filters.private & filters.command(["start"]))
@@ -76,19 +77,20 @@ async def start(bot, update):
     )
 )
 async def autopost(bot, update):
-    if (not update.chat.id in FROM_CHANNELS) or (not TO_CHAT) or ((update.chat.id in FROM_CHANNELS) and (not TO_CHAT)):
+    if len(FROM_CHANNELS) == 0 or len(TO_CHATS) == 0 or update.chat.id not in FROM_CHANNELS:
         return
     try:
-        if AS_COPY:
-            if REPLY_MARKUP:
-                await update.copy(
-                    chat_id=TO_CHAT,
-                    reply_markup=update.reply_markup
-                )
+        for chat_id in TO_CHATS:
+            if AS_COPY:
+                if REPLY_MARKUP:
+                    await update.copy(
+                        chat_id=chat_id,
+                        reply_markup=update.reply_markup
+                    )
+                else:
+                    await update.copy(chat_id=chat_id)
             else:
-                await update.copy(chat_id=TO_CHAT)
-        else:
-            await update.forward(chat_id=TO_CHAT)
+                await update.forward(chat_id=chat_id)
     except Exception as error:
         print(error)
 
