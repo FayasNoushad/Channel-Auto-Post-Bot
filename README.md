@@ -27,7 +27,7 @@ python3 main.py
 - `API_ID` Your API ID from my.telegram.org
 - `BOT_TOKEN` Your bot token from @BotFather
 
-## Non Required
+### Non Required
 
 - `FROM_CHANNELS` From channel ids for auto post
 - `TO_CHATS` To channel or group or chat ids for auto post
