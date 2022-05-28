@@ -1,7 +1,10 @@
 import os
+from dotenv import load_dotenv
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
+
+load_dotenv()
 
 FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
 TO_CHATS = set(int(x) for x in os.environ.get("TO_CHATS", "").split())
