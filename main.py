@@ -42,10 +42,12 @@ Bot = Client(
     api_hash=API_HASH
 )
 
-START_TEXT = """Hello {}, I am a channel auto post telegram bot.
+START_TEXT = """Hello {}, \
+I am a channel auto post telegram bot.
 
 Made by @FayasNoushad"""
-START_BUTTONS = InlineKeyboardMarkup(
+
+BUTTONS = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
@@ -63,7 +65,7 @@ async def start(_, message):
     await message.reply_text(
         text=START_TEXT.format(message.from_user.mention),
         disable_web_page_preview=True,
-        reply_markup=START_BUTTONS
+        reply_markup=BUTTONS
     )
 
 
