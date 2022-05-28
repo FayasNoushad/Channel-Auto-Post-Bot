@@ -7,7 +7,8 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 load_dotenv()
 
 # chat details
-FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
+FROM_CHANNELS = set(int(x)
+                    for x in os.environ.get("FROM_CHANNELS", "").split())
 TO_CHATS = set(int(x) for x in os.environ.get("TO_CHATS", "").split())
 
 # filters for auto post
@@ -50,11 +51,14 @@ Made by @FayasNoushad"""
 BUTTONS = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton('Channel', url='https://telegram.me/FayasNoushad'),
-            InlineKeyboardButton('Feedback', url='https://telegram.me/TheFayas')
+            InlineKeyboardButton(
+                'Channel', url='https://telegram.me/FayasNoushad'),
+            InlineKeyboardButton(
+                'Feedback', url='https://telegram.me/TheFayas')
         ],
         [
-            InlineKeyboardButton('Source Code', url='https://github.com/FayasNoushad/Channel-Auto-Post-Bot')
+            InlineKeyboardButton(
+                'Source Code', url='https://github.com/FayasNoushad/Channel-Auto-Post-Bot')
         ]
     ]
 )
@@ -71,32 +75,67 @@ async def start(_, message):
 
 @Bot.on_message(
     filters.channel & (
-        filters.text if FILTER_TEXT else None |
-        filters.audio if FILTER_AUDIO else None |
-        filters.document if FILTER_DOCUMENT else None |
-        filters.photo if FILTER_PHOTO else None |
-        filters.sticker if FILTER_STICKER else None |
-        filters.video if FILTER_VIDEO else None |
-        filters.animation if FILTER_ANIMATION else None |
-        filters.voice if FILTER_VOICE else None |
-        filters.video_note if FILTER_VIDEO_NOTE else None |
-        filters.contact if FILTER_CONTACT else None |
-        filters.location if FILTER_LOCATION else None |
-        filters.venue if FILTER_VENUE else None |
-        filters.poll if FILTER_POLL else None |
-        filters.game if FILTER_GAME else None
+        filters.text |
+        filters.audio |
+        filters.document |
+        filters.photo |
+        filters.sticker |
+        filters.video |
+        filters.animation |
+        filters.voice |
+        filters.video_note |
+        filters.contact |
+        filters.location |
+        filters.venue |
+        filters.poll |
+        filters.game
     )
 )
 async def autopost(_, message):
+
     if len(FROM_CHANNELS) == 0 or len(TO_CHATS) == 0 or message.chat.id not in FROM_CHANNELS:
         return
+
+    if not (
+        (
+            message.text and FILTER_TEXT
+        ) or (
+            message.audio and FILTER_AUDIO
+        ) or (
+            message.document and FILTER_DOCUMENT
+        ) or (
+            message.photo and FILTER_PHOTO
+        ) or (
+            message.sticker and FILTER_STICKER
+        ) or (
+            message.video and FILTER_VIDEO
+        ) or (
+            message.animation and FILTER_ANIMATION
+        ) or (
+            message.voice and FILTER_VOICE
+        ) or (
+            message.video_note and FILTER_VIDEO_NOTE
+        ) or (
+            message.contact and FILTER_CONTACT
+        ) or (
+            message.location and FILTER_LOCATION
+        ) or (
+            message.venue and FILTER_VENUE
+        ) or (
+            message.poll and FILTER_POLL
+        ) or (
+            message.game and FILTER_GAME
+        )
+    ):
+        return
+
     try:
         for chat_id in TO_CHATS:
             if AS_COPY:
                 if REPLY_MARKUP:
                     await message.copy(
                         chat_id=chat_id,
-                        reply_markup=update.reply_markup
+                        reply_markup=message.reply_markup
                     )
                 else:
                     await message.copy(chat_id=chat_id)
