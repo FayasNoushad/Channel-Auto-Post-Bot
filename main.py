@@ -6,9 +6,9 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 load_dotenv()
 
+# chat details
 FROM_CHANNELS = set(int(x) for x in os.environ.get("FROM_CHANNELS", "").split())
 TO_CHATS = set(int(x) for x in os.environ.get("TO_CHATS", "").split())
-AS_COPY = bool(os.environ.get("AS_COPY", True))
 
 # filters for auto post
 FILTER_TEXT = bool(os.environ.get("FILTER_TEXT", True))
@@ -26,14 +26,20 @@ FILTER_VENUE = bool(os.environ.get("FILTER_VENUE", True))
 FILTER_POLL = bool(os.environ.get("FILTER_POLL", True))
 FILTER_GAME = bool(os.environ.get("FILTER_GAME", True))
 
-# for copy buttons
+# for copy
+AS_COPY = bool(os.environ.get("AS_COPY", True))
 REPLY_MARKUP = bool(os.environ.get("REPLY_MARKUP", False))
+
+# bot informations
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+API_ID = int(os.environ.get("API_ID"))
+API_HASH = os.environ.get("API_HASH")
 
 Bot = Client(
     "Channel Auto Post Bot",
-    bot_token = os.environ["BOT_TOKEN"],
-    api_id = int(os.environ["API_ID"]),
-    api_hash = os.environ["API_HASH"]
+    bot_token=BOT_TOKEN,
+    api_id=API_ID,
+    api_hash=API_HASH
 )
 
 START_TEXT = """Hello {}, I am a channel auto post telegram bot.
@@ -52,10 +58,10 @@ START_BUTTONS = InlineKeyboardMarkup(
 )
 
 
-@Bot.on_message(filters.private & filters.command(["start"]))
-async def start(bot, update):
-    await update.reply_text(
-        text=START_TEXT.format(update.from_user.mention),
+@Bot.on_message(filters.private & filters.command("start"))
+async def start(_, message):
+    await message.reply_text(
+        text=START_TEXT.format(message.from_user.mention),
         disable_web_page_preview=True,
         reply_markup=START_BUTTONS
     )
@@ -79,21 +85,21 @@ async def start(bot, update):
         filters.game if FILTER_GAME else None
     )
 )
-async def autopost(bot, update):
-    if len(FROM_CHANNELS) == 0 or len(TO_CHATS) == 0 or update.chat.id not in FROM_CHANNELS:
+async def autopost(_, message):
+    if len(FROM_CHANNELS) == 0 or len(TO_CHATS) == 0 or message.chat.id not in FROM_CHANNELS:
         return
     try:
         for chat_id in TO_CHATS:
             if AS_COPY:
                 if REPLY_MARKUP:
-                    await update.copy(
+                    await message.copy(
                         chat_id=chat_id,
                         reply_markup=update.reply_markup
                     )
                 else:
-                    await update.copy(chat_id=chat_id)
+                    await message.copy(chat_id=chat_id)
             else:
-                await update.forward(chat_id=chat_id)
+                await message.forward(chat_id=chat_id)
     except Exception as error:
         print(error)
 
