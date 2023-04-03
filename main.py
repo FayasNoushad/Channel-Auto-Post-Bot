@@ -46,19 +46,16 @@ Bot = Client(
 START_TEXT = """Hello {}, \
 I am a channel auto post telegram bot.
 
-Made by @FayasNoushad"""
+I can send any messages from one or more channels \
+to one or more chats (including users, groups, channels)"""
 
 BUTTONS = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                'Channel', url='https://telegram.me/FayasNoushad'),
+                text="Feedback", url="https://telegram.me/FayasNoushad"),
             InlineKeyboardButton(
-                'Feedback', url='https://telegram.me/TheFayas')
-        ],
-        [
-            InlineKeyboardButton(
-                'Source Code', url='https://github.com/FayasNoushad/Channel-Auto-Post-Bot')
+                text="Source Code", url="https://github.com/FayasNoushad/Channel-Auto-Post-Bot")
         ]
     ]
 )
