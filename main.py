@@ -44,18 +44,18 @@ Bot = Client(
 )
 
 START_TEXT = """Hello {}, \
-I am a channel auto post telegram bot.
+Saya Adalah channel auto post telegram bot.
 
-I can send any messages from one or more channels \
-to one or more chats (including users, groups, channels)"""
+Kirim Poto Anda, Atau Kata Kata Kesini Jika Sudah \
+Tunggu Beberapa Menit, Dilarang Keras Pap Berbau 18+! (including users, groups, Channel)"""
 
 BUTTONS = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton(
-                text="Feedback", url="https://telegram.me/FayasNoushad"),
+                text="Bot Builder", url="https://telegram.me/FayasNoushad"),
             InlineKeyboardButton(
-                text="Source Code", url="https://github.com/FayasNoushad/Channel-Auto-Post-Bot")
+                text="Group", url="https://t.me/CariSahabatOnline_Id")
         ]
     ]
 )
