@@ -31,7 +31,12 @@ python3 main.py
 
 - `FROM_CHANNELS` From channel ids for auto post
 - `TO_CHATS` To channel or group or chat ids for auto post
-- `AS_COPY` (bool and optional) For forward as copy
+
+`Note:- Add '-100' before channel IDs and add '-' before group IDs`
+
+- `AS_FORWARD` (bool and optional) For forward or copy
+- `REPLY_MARKUP` (bool and optional) For copy reply markup
+
 - `FILTER_TEXT` (bool and optional) For text filter
 - `FILTER_AUDIO` (bool and optional) For audio filter
 - `FILTER_DOCUMENT` (bool and optional) For document filter
@@ -46,13 +51,14 @@ python3 main.py
 - `FILTER_LOCATION` (bool and optional) For location filter
 - `FILTER_POLL` (bool and optional) For poll filter
 - `FILTER_GAME` (bool and optional) For game filter
-- `REPLY_MARKUP` (bool and optional) For copy reply markup
+
+`Note:- Dont add value for false`
 
 ---
 
 ## Credits
 
-- [Fayas Noushad](https://github.com/FayasNoushad)
+- [Contributors](https://github.com/FayasNoushad/Channel-Auto-Post-Bot/graphs/contributors)
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
 
 ---

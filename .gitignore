@@ -3,3 +3,4 @@
 *.session
 *.pyc
 *.env
+test.py
