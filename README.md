@@ -1,9 +1,5 @@
-```
-Made with Python3
-(C) @FayasNoushad
-Copyright permission under MIT License
-License -> https://github.com/FayasNoushad/Channel-Auto-Post-Bot/blob/main/LICENSE
-```
+# Channel-Auto-Post-Bot
+A channel auto post telegram bot.
 
 ---
 
