@@ -28,9 +28,7 @@ python3 main.py
 - `FROM_CHANNELS` From channel ids for auto post
 - `TO_CHATS` To channel or group or chat ids for auto post
 
-```
-Note:- Add '-100' before channel IDs and add '-' before group IDs
-```
+> Note:- Add '-100' before channel IDs and add '-' before group IDs
 
 - `AS_FORWARD` (bool and optional) For forward or copy
 - `REPLY_MARKUP` (bool and optional) For copy reply markup
@@ -50,9 +48,7 @@ Note:- Add '-100' before channel IDs and add '-' before group IDs
 - `FILTER_POLL` (bool and optional) For poll filter
 - `FILTER_GAME` (bool and optional) For game filter
 
-```
-Note:- Dont add value for false
-```
+> Note:- Don't add value for false
 
 ---
 
