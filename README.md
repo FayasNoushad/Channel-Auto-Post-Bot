@@ -34,7 +34,6 @@ python3 main.py
 
 - `AS_FORWARD` (bool and optional) For forward or copy
 - `REPLY_MARKUP` (bool and optional) For copy reply markup
-
 - `FILTER_TEXT` (bool and optional) For text filter
 - `FILTER_AUDIO` (bool and optional) For audio filter
 - `FILTER_DOCUMENT` (bool and optional) For document filter
