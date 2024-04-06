@@ -8,6 +8,8 @@ A channel auto post telegram bot.
 ```sh
 git clone https://github.com/FayasNoushad/Channel-Auto-Post-Bot.git
 cd Channel-Auto-Post-Bot
+python3 -m venv venv
+. ./venv/bin/activate
 pip3 install -r requirements.txt
 # <Create Variables appropriately>
 python3 main.py
